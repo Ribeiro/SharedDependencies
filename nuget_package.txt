@@ -1,0 +1,51 @@
+
+Generate Nuget package
+======================
+dotnet pack --configuration Release
+
+Configure Nexus as package source
+==================================
+dotnet nuget add source "https://nexus-url/repository/nuget-hosted" --name "Nexus" --username "user" --password "password"
+
+Check Nexus configuration
+==========================
+dotnet nuget list source
+
+expected:
+
+Registered Sources:
+  1.  Nexus [Enabled]
+      https://nexus-url/repository/nuget-hosted
+
+
+Publish Nuget package
+======================
+dotnet nuget push bin/Release/SharedDependencies.1.0.0.nupkg --source Nexus
+
+expected:
+Pushing SharedDependencies.1.0.0.nupkg to 'https://nexus-url/repository/nuget-hosted'...
+Your package was pushed.
+
+
+==========================================================================
+Create Nuget.Config on your projects source folder in order to use 
+SharedDependencies lib:
+
+<configuration>
+  <packageSources>
+    <add key="Nexus" value="https://nexus-url/repository/nuget-hosted" />
+  </packageSources>
+  <packageSourceCredentials>
+    <Nexus>
+      <add key="Username" value="user" />
+      <add key="ClearTextPassword" value="password" />
+    </Nexus>
+  </packageSourceCredentials>
+</configuration>
+
+
+Adding SharedDependencies lib to your projects
+===============================================
+dotnet add package SharedDependencies --version 1.0.0
+
+

@@ -1,0 +1,77 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+.nuget/
+
+# Logs
+*.log
+
+# VS Code files
+.vscode/
+
+# Rider files
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Lock files
+project.lock.json
+project.fragment.lock.json
+
+# IDE and editor settings
+*.psess
+*.vs/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# Dotnet tool artifacts
+*.cache/
+*.pyc
+*.pyo
+*.pyd
+*.pidb
+*.svg
+
+# Configuration files for various editors
+*.editorconfig
+
+# Docker files
+docker-compose.override.yml
+
+# Localhost certificate
+*.pfx
+
+# Secret files
+secrets.json
+*.secrets.json
+.env
+
+# Temporary files for dotnet pack and publish
+artifacts/
